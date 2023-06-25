@@ -5,12 +5,14 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "compile-sass":"sass ./public/sass/main.scss  ./public/index.css -w"
   },
   "author": "Rahul Sinha",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "sass": "^1.63.6"
   }
 }

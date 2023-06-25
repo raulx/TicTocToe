@@ -1,0 +1,100 @@
+.game__loader {
+  width: 70vw;
+  height: 90vh;
+  position: absolute;
+  background-color: transparent;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 3rem;
+}
+.game__loader__box {
+  height: 100%;
+  width: 100%;
+  border-radius: 2rem;
+  background-color: #FF4D4D;
+}
+.game__loader__box--start {
+  padding: 4rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  position: relative;
+}
+.game__loader__box--start__choices {
+  margin-top: 10rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+.game__loader__box--start__btn {
+  margin-bottom: 2rem;
+  padding: 4rem;
+  font-size: 4rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  border: none;
+  border-radius: 2rem;
+  background-color: #F9C831;
+  color: #FF4D4D;
+  cursor: pointer;
+}
+
+.cross {
+  height: 22rem;
+  width: 22rem;
+  overflow: hidden;
+  background-color: transparent;
+  border-radius: 50%;
+  position: relative;
+}
+.cross:before {
+  content: "";
+  top: 0;
+  left: 35%;
+  width: 40%;
+  height: 100%;
+  background-color: #F9C831;
+  position: absolute;
+  transform: skewX(-45deg);
+}
+.cross:after {
+  content: "";
+  top: 0;
+  right: 35%;
+  width: 40%;
+  height: 100%;
+  background-color: #F9C831;
+  position: absolute;
+  transform: skewX(45deg);
+}
+
+.circle {
+  height: 22rem;
+  width: 22rem;
+  border: 6rem solid #F9C831;
+  border-radius: 50%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  color: #fff;
+  background-color: #DBC7FC;
+  font-family: "Roboto", sans-serif;
+}
+
+/*# sourceMappingURL=index.css.map */
