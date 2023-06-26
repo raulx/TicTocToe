@@ -1,6 +1,46 @@
-.circle{
+:root{
+  --dynamic-circle-background-color:#f9c831;
+  --dynamic-circle-psuedo-color:#ff4d4d;
+}
+
+.circle-static{
     height:22rem;
     width:22rem;
-    border:6rem solid $color-tertiary;
+    background-color: $color-tertiary;
     border-radius:50%;
+    position: relative;
+    &:before{
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      height: 30%;
+      width: 30%;
+      border-radius: 50%;
+      background-color: $color-secondary;
+    }
+  }
+
+  .circle-dynamic{
+    height:22rem;
+    width:22rem;
+    background-color: var(--dynamic-circle-background-color);
+    border-radius:50%;
+    position: relative;
+    transition: all .2s;
+
+    &:before{
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      height: 30%;
+      width: 30%;
+      border-radius: 50%;
+      background-color: var(--dynamic-circle-psuedo-color);
+      transition: all .2s;
+
+    }
   }

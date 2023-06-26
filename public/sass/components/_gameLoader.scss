@@ -16,6 +16,8 @@
         width: 100%;
         border-radius: 2rem;
         background-color: $color-secondary;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
         &--start{
             padding: 4rem 3rem;
             display: flex;
@@ -38,6 +40,32 @@
                 background-color: $color-tertiary;
                 color:$color-secondary;
                 cursor: pointer;
+                transition: all .2s;
+                &:hover{
+                    background-color:$color-tertiary-hover ;
+                }
+            }
+        }
+        &--side{
+            display: flex;
+            flex-direction: column;
+            padding: 3rem;
+            text-align: center;
+            &-text{
+                font-size: 5rem;
+                letter-spacing: 2px;
+                color: $color-tertiary;
+                font-weight: 900;
+                margin-bottom: 2rem;
+            }
+            &-choice{
+                cursor: pointer;
+                border-radius: 2rem;
+                transition: all .2s;
+
+                &-1{
+                    background-color: $color-tertiary;
+                }
             }
         }
     }

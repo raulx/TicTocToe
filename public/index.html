@@ -14,16 +14,37 @@
     <div class="game__loader">
       <div class="game__loader__box game__loader__box--start">
         <div class="game__loader__box--start__choices">
-          <div class="cross">
+          <div class="cross-static">
             <span></span>
           </div>
-          <div class="circle">
+          <div class="circle-static">
             <span></span>
           </div>
         </div>
         <button class="game__loader__box--start__btn">Start</button>
       </div>
-      <div class="game__loader__box game__loader__box--side"></div>
+      <div class="game__loader__box game__loader__box--side">
+        <h2 class="game__loader__box--side-text">Choose a side</h2>
+        <div
+          id="cross-box"
+          class="game__loader__box--side-choice game__loader__box--side-choice-1 flex-center margin-bottom-small padding-small"
+        >
+          <div id="dynamic-cross" class="cross-dynamic extra-large">
+            <span></span>
+          </div>
+        </div>
+        <div
+          id="circle-box"
+          class="game__loader__box--side-choice game__loader__box--side-choice-2 flex-center padding-small"
+        >
+          <div
+            id="dynamic-circle"
+            class="circle-dynamic circle_select extra-large"
+          >
+            <span></span>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="index.js"></script>
   </body>
