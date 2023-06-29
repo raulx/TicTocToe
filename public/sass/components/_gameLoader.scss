@@ -11,6 +11,7 @@
     grid-template-rows: repeat(1,1fr);
     gap: 3rem;
 
+
     &__box{
         height: 100%;
         width: 100%;
@@ -24,6 +25,8 @@
             justify-content: space-between;
             flex-direction: column;
             position: relative;
+            animation: animateOpacity .2s linear;
+            animation-fill-mode: backwards;
             &__choices{
                 margin-top: 10rem;
                 display: flex;
@@ -40,7 +43,7 @@
                 background-color: $color-tertiary;
                 color:$color-secondary;
                 cursor: pointer;
-                transition: all .2s;
+                transition: background-color .2s;
                 &:hover{
                     background-color:$color-tertiary-hover ;
                 }
@@ -51,6 +54,8 @@
             flex-direction: column;
             padding: 3rem;
             text-align: center;
+            animation: animateOpacity .2s linear;
+            animation-fill-mode: backwards;
             &-text{
                 font-size: 5rem;
                 letter-spacing: 2px;
@@ -61,10 +66,11 @@
             &-choice{
                 cursor: pointer;
                 border-radius: 2rem;
-                transition: all .2s;
+                transition: background-color .2s;
 
                 &-1{
                     background-color: $color-tertiary;
+    
                 }
             }
         }

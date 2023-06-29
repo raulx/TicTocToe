@@ -24,6 +24,8 @@
   justify-content: space-between;
   flex-direction: column;
   position: relative;
+  animation: animateOpacity 0.2s linear;
+  animation-fill-mode: backwards;
 }
 .game__loader__box--start__choices {
   margin-top: 10rem;
@@ -41,16 +43,18 @@
   background-color: #F9C831;
   color: #FF4D4D;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: background-color 0.2s;
 }
 .game__loader__box--start__btn:hover {
-  background-color: #ffbf00;
+  background-color: #e0a904;
 }
 .game__loader__box--side {
   display: flex;
   flex-direction: column;
   padding: 3rem;
   text-align: center;
+  animation: animateOpacity 0.2s linear;
+  animation-fill-mode: backwards;
 }
 .game__loader__box--side-text {
   font-size: 5rem;
@@ -62,7 +66,7 @@
 .game__loader__box--side-choice {
   cursor: pointer;
   border-radius: 2rem;
-  transition: all 0.2s;
+  transition: background-color 0.2s;
 }
 .game__loader__box--side-choice-1 {
   background-color: #F9C831;
@@ -108,7 +112,7 @@
   background-color: transparent;
   border-radius: 50%;
   position: relative;
-  transition: all 0.2s;
+  transition: background-color 0.2s;
 }
 .cross-dynamic:before {
   content: "";
@@ -119,7 +123,7 @@
   background-color: var(--dynamic-cross);
   position: absolute;
   transform: skewX(-45deg);
-  transition: all 0.2s;
+  transition: background-color 0.2s;
 }
 .cross-dynamic:after {
   content: "";
@@ -130,7 +134,36 @@
   background-color: var(--dynamic-cross);
   position: absolute;
   transform: skewX(45deg);
-  transition: all 0.2s;
+  transition: background-color 0.2s;
+}
+
+.cross-move {
+  height: 80%;
+  width: 80%;
+  overflow: hidden;
+  background-color: transparent;
+  border-radius: 50%;
+  position: relative;
+}
+.cross-move:before {
+  content: "";
+  top: 0;
+  left: 35%;
+  width: 40%;
+  height: 100%;
+  background-color: #FCE4C7;
+  position: absolute;
+  transform: skewX(-45deg);
+}
+.cross-move:after {
+  content: "";
+  top: 0;
+  right: 35%;
+  width: 40%;
+  height: 100%;
+  background-color: #FCE4C7;
+  position: absolute;
+  transform: skewX(45deg);
 }
 
 :root {
@@ -163,7 +196,7 @@
   background-color: var(--dynamic-circle-background-color);
   border-radius: 50%;
   position: relative;
-  transition: all 0.2s;
+  transition: background-color 0.2s;
 }
 .circle-dynamic:before {
   content: "";
@@ -175,7 +208,26 @@
   width: 30%;
   border-radius: 50%;
   background-color: var(--dynamic-circle-psuedo-color);
-  transition: all 0.2s;
+  transition: background-color 0.2s;
+}
+
+.circle-move {
+  height: 80%;
+  width: 80%;
+  background-color: #FCE4C7;
+  border-radius: 50%;
+  position: relative;
+}
+.circle-move:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 30%;
+  width: 30%;
+  border-radius: 50%;
+  background-color: #FCE4C7;
 }
 
 .extra-large {
@@ -201,6 +253,57 @@
   padding: 4rem;
 }
 
+.winner {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0.5;
+}
+
+@keyframes animateOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.game-board {
+  width: 60rem;
+  height: 50rem;
+  position: absolute;
+  background-color: transparent;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+}
+.game-board__grid {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2rem;
+  background-color: transparent;
+}
+.game-board__grid__child {
+  background-color: #F9C831;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.game-board__grid__child-1, .game-board__grid__child-3, .game-board__grid__child-5, .game-board__grid__child-7, .game-board__grid__child-9 {
+  background-color: #FF4D4D;
+}
+
 *,
 *:before,
 *:after {
@@ -216,8 +319,11 @@ html {
 body {
   box-sizing: border-box;
   color: #fff;
+  height: 100vh;
+  width: 100vw;
   background-color: #DBC7FC;
   font-family: "arial", sans-serif;
+  position: relative;
 }
 
 /*# sourceMappingURL=index.css.map */

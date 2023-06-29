@@ -28,7 +28,7 @@
     background-color: var(--dynamic-circle-background-color);
     border-radius:50%;
     position: relative;
-    transition: all .2s;
+    transition: background-color .2s;
 
     &:before{
       content: "";
@@ -40,7 +40,26 @@
       width: 30%;
       border-radius: 50%;
       background-color: var(--dynamic-circle-psuedo-color);
-      transition: all .2s;
+      transition: background-color .2s;
 
+    }
+  }
+
+  .circle-move{
+    height:80%;
+    width:80%;
+    background-color: $color-main;
+    border-radius:50%;
+    position: relative;
+    &:before{
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      height: 30%;
+      width: 30%;
+      border-radius: 50%;
+      background-color:$color-main;
     }
   }

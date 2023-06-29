@@ -38,7 +38,7 @@
     background-color:transparent;
     border-radius:50%;
     position:relative;
-    transition: all .2s;
+    transition: background-color .2s;
 
     &:before{
         content:"";
@@ -49,9 +49,7 @@
         background-color:var(--dynamic-cross);
         position:absolute;
         transform:skewX(-45deg);
-        transition: all .2s;
-
-        
+        transition: background-color .2s; 
     }
     &:after{
         content:"";
@@ -62,7 +60,36 @@
         background-color:var(--dynamic-cross);
         position:absolute;
         transform:skewX(45deg);
-        transition: all .2s;
+        transition: background-color .2s;
+    }
+  }
 
+  .cross-move{
+    height:80%;
+    width:80%;
+    overflow:hidden;
+    background-color:transparent;
+    border-radius:50%;
+    position:relative;
+
+    &:before{
+        content:"";
+        top:0;
+        left:35%;
+        width:40%;
+        height:100%;
+        background-color:$color-main;
+        position:absolute;
+        transform:skewX(-45deg)
+    }
+    &:after{
+        content:"";
+        top:0;
+        right:35%;
+        width:40%;
+        height:100%;
+        background-color:$color-main;
+        position:absolute;
+        transform:skewX(45deg)
     }
   }

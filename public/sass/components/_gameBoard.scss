@@ -1,0 +1,38 @@
+.game-board{
+    width: 60rem;
+    height: 50rem;
+    position: absolute;
+    background-color:transparent;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    visibility: hidden;
+
+    &__grid{
+        display: grid;
+        height: 100%;
+        width: 100%;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(3,1fr);
+        gap: 2rem;
+        background-color: transparent;
+        
+
+        &__child{
+            background-color: $color-tertiary;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            &-1,
+            &-3,
+            &-5,
+            &-7,
+            &-9{
+                background-color:$color-secondary;
+            }
+        }
+
+    }
+}
+

@@ -11,7 +11,7 @@
     <title>TicTacToe</title>
   </head>
   <body>
-    <div class="game__loader">
+    <div id="game-loader" class="game__loader">
       <div class="game__loader__box game__loader__box--start">
         <div class="game__loader__box--start__choices">
           <div class="cross-static">
@@ -21,7 +21,9 @@
             <span></span>
           </div>
         </div>
-        <button class="game__loader__box--start__btn">Start</button>
+        <button id="start-btn" class="game__loader__box--start__btn">
+          Start
+        </button>
       </div>
       <div class="game__loader__box game__loader__box--side">
         <h2 class="game__loader__box--side-text">Choose a side</h2>
@@ -46,6 +48,26 @@
         </div>
       </div>
     </div>
+
+    <!-- game board -->
+
+    <div id="game-board" class="game-board">
+      <div class="game-board__grid">
+        <div class="game-board__grid__child game-board__grid__child-0"></div>
+        <div class="game-board__grid__child game-board__grid__child-1"></div>
+        <div class="game-board__grid__child game-board__grid__child-2"></div>
+        <div class="game-board__grid__child game-board__grid__child-3"></div>
+        <div class="game-board__grid__child game-board__grid__child-4"></div>
+        <div class="game-board__grid__child game-board__grid__child-5"></div>
+        <div class="game-board__grid__child game-board__grid__child-6"></div>
+        <div class="game-board__grid__child game-board__grid__child-7"></div>
+        <div class="game-board__grid__child game-board__grid__child-8"></div>
+      </div>
+      <button id="restart">restart</button>
+    </div>
+    <!-- <div class="winner">
+      <button id="restart" class="btn restart">restart</button>
+    </div> -->
     <script src="index.js"></script>
   </body>
 </html>

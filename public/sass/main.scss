@@ -3,6 +3,8 @@
 @import './components/_cross';
 @import './components/circle';
 @import './base/_utilities.scss';
+@import './base/animations';
+@import './components/gameBoard';
 
 
 
@@ -19,6 +21,9 @@ html{
 body{
     box-sizing: border-box;
     color: #fff;
+    height: 100vh;
+    width: 100vw;
     background-color:$color-primary;
     font-family: 'arial',sans-serif;
+    position: relative;
 }

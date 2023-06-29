@@ -17,3 +17,16 @@
 .padding-small{
     padding: 4rem;
 }
+
+.winner{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: .5;
+}
