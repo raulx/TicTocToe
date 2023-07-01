@@ -105,6 +105,39 @@
   transform: skewX(45deg);
 }
 
+.cross-static_red {
+  height: 22rem;
+  width: 22rem;
+  overflow: hidden;
+  background-color: transparent;
+  border-radius: 50%;
+  position: relative;
+}
+.cross-static_red__logo {
+  height: 50%;
+  width: 50%;
+}
+.cross-static_red:before {
+  content: "";
+  top: 0;
+  left: 35%;
+  width: 40%;
+  height: 100%;
+  background-color: #FF4D4D;
+  position: absolute;
+  transform: skewX(-45deg);
+}
+.cross-static_red:after {
+  content: "";
+  top: 0;
+  right: 35%;
+  width: 40%;
+  height: 100%;
+  background-color: #FF4D4D;
+  position: absolute;
+  transform: skewX(45deg);
+}
+
 .cross-dynamic {
   height: 22rem;
   width: 22rem;
@@ -190,6 +223,29 @@
   background-color: #FF4D4D;
 }
 
+.circle-static_red {
+  height: 22rem;
+  width: 22rem;
+  background-color: #FF4D4D;
+  border-radius: 50%;
+  position: relative;
+}
+.circle-static_red__logo {
+  height: 50%;
+  width: 50%;
+}
+.circle-static_red:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 30%;
+  width: 30%;
+  border-radius: 50%;
+  background-color: #FCE4C7;
+}
+
 .circle-dynamic {
   height: 22rem;
   width: 22rem;
@@ -254,14 +310,15 @@
 }
 
 .winner {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   top: 0;
   left: 0;
+  font-size: 5rem;
   background-color: black;
   opacity: 0.5;
 }
@@ -304,6 +361,22 @@
   background-color: #FF4D4D;
 }
 
+.logo {
+  height: 15rem;
+  width: 20rem;
+  background-color: #FCE4C7;
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 2rem;
+  border-radius: 2rem;
+  transform: skew(10deg, -10deg);
+}
+
 *,
 *:before,
 *:after {
@@ -319,11 +392,8 @@ html {
 body {
   box-sizing: border-box;
   color: #fff;
-  height: 100vh;
-  width: 100vw;
   background-color: #DBC7FC;
   font-family: "arial", sans-serif;
-  position: relative;
 }
 
 /*# sourceMappingURL=index.css.map */

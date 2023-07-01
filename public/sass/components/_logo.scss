@@ -1,0 +1,15 @@
+.logo{
+    height: 15rem;
+    width: 20rem;
+    background-color: $color-primary-2;
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 2rem;
+    border-radius: 2rem;
+    transform: skew(10deg,-10deg);
+}

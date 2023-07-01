@@ -1,9 +1,8 @@
-// these vaiables are for selecting between cross and naught
+// these variables are for selecting between cross and naught
 const crossBox = document.getElementById('cross-box');
 const circleBox = document.getElementById('circle-box');
 const dynamicCircle = document.getElementById('dynamic-circle');
 const dynamicCross = document.getElementById('dynamic-cross');
-
 const gameLoader = document.getElementById('game-loader'); 
 const startBtn = document.getElementById('start-btn');
 const gameBoard = document.getElementById('game-board');
@@ -17,6 +16,8 @@ const winnerSequence = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],
 let playerChoice = 'x';
 let totalMoves = 0;
 let foundWinner = false;
+
+
 function crossWon(){
     let winnerFound = false;
    
@@ -46,7 +47,10 @@ function crossWon(){
 
 function checkDraw(){
     if(totalMoves === 9 && foundWinner === false){
-        console.log('draw.')
+        const winner = document.createElement('div');
+        winner.innerHTML = 'Draw'
+        winner.classList.add('winner');
+        gameBoard.appendChild(winner);
     }
 }
 
@@ -100,42 +104,45 @@ function computerMove(){
         totalMoves += 1;
         const compWon = compChoice==='x'?crossWon():naughtWon();
         if(compWon === true){
-            console.log('computer won')
+            const winner = document.createElement('div');
+            winner.innerHTML = 'computer won'
+            winner.classList.add('winner');
+            gameBoard.appendChild(winner);
             gameBoardGrid.forEach((box)=>{
                 box.removeEventListener('click',handleClick)
             })
         }
-        checkDraw()
-    }
-    else if(totalMoves === 9){
-        console.log('game over.')
+        else if(compWon === false && totalMoves === 9){
+            checkDraw()
+        }
     }
     else{
         computerMove()
     }
+
     
 }
 function handleClick(event){
     const pMove = printMove(type = playerChoice)
     totalMoves += 1;
-
     event.target.appendChild(pMove)
-
     event.target.removeEventListener('click',handleClick)
     let isPlayerWon = playerChoice === 'x'?crossWon():naughtWon()
+    checkDraw()
     
     if(isPlayerWon === true){
-        console.log('player won')
+        const winner = document.createElement('div');
+        winner.innerHTML = 'You won'
+        winner.classList.add('winner');
+        gameBoard.appendChild(winner);
         gameBoardGrid.forEach((box)=>{
             box.removeEventListener('click',handleClick)
         })
     }
- 
     else{
         computerMove()
 
     }
-    checkDraw()
 }
 
 function playerMove(){
@@ -155,12 +162,19 @@ function gameStart(){
 
 function gameReset(){
     gameLoader.style.visibility = 'visible';
-    gameBoard.style.visibility= 'hidden'
+    gameBoard.style.visibility= 'hidden';
+    const lastChild = document.querySelector('.winner');
+    if(lastChild !== null){
+        gameBoard.removeChild(lastChild)
+    }
     gameBoardGrid.forEach((box)=>{
         box.removeEventListener('click',handleClick);
         box.innerHTML = '';
     })
+    totalMoves = 0;
+    foundWinner = false;
 }
+
 function userChoice(event){
     const choosen = event.target.id
     if(choosen==='dynamic-cross'){
