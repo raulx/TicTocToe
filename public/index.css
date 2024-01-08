@@ -10,10 +10,9 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(1, 1fr);
   gap: 3rem;
+  z-index: 0;
 }
 .game__loader__box {
-  height: 100%;
-  width: 100%;
   border-radius: 2rem;
   background-color: #FF4D4D;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -77,8 +76,8 @@
 }
 
 .cross-static {
-  height: 22rem;
-  width: 22rem;
+  height: 14rem;
+  width: 14rem;
   overflow: hidden;
   background-color: transparent;
   border-radius: 50%;
@@ -106,8 +105,8 @@
 }
 
 .cross-static_red {
-  height: 22rem;
-  width: 22rem;
+  height: 14rem;
+  width: 14rem;
   overflow: hidden;
   background-color: transparent;
   border-radius: 50%;
@@ -139,8 +138,8 @@
 }
 
 .cross-dynamic {
-  height: 22rem;
-  width: 22rem;
+  height: 16rem;
+  width: 16rem;
   overflow: hidden;
   background-color: transparent;
   border-radius: 50%;
@@ -205,8 +204,8 @@
 }
 
 .circle-static {
-  height: 22rem;
-  width: 22rem;
+  height: 14rem;
+  width: 14rem;
   background-color: #F9C831;
   border-radius: 50%;
   position: relative;
@@ -224,8 +223,8 @@
 }
 
 .circle-static_red {
-  height: 22rem;
-  width: 22rem;
+  height: 14rem;
+  width: 14rem;
   background-color: #FF4D4D;
   border-radius: 50%;
   position: relative;
@@ -247,8 +246,8 @@
 }
 
 .circle-dynamic {
-  height: 22rem;
-  width: 22rem;
+  height: 14rem;
+  width: 14rem;
   background-color: var(--dynamic-circle-background-color);
   border-radius: 50%;
   position: relative;
@@ -283,7 +282,7 @@
   height: 30%;
   width: 30%;
   border-radius: 50%;
-  background-color: #FCE4C7;
+  background-color: transparent;
 }
 
 .extra-large {
@@ -319,8 +318,10 @@
   top: 0;
   left: 0;
   font-size: 5rem;
+  color: #FCE4C7;
   background-color: black;
-  opacity: 0.5;
+  opacity: 0.6;
+  text-transform: uppercase;
 }
 
 @keyframes animateOpacity {
@@ -331,15 +332,28 @@
     opacity: 1;
   }
 }
-.game-board {
-  width: 60rem;
-  height: 50rem;
-  position: absolute;
+.game-container {
+  position: relative;
+  max-width: 110rem;
+  height: 100vh;
+  margin: 0 auto;
   background-color: transparent;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
   visibility: hidden;
+}
+
+.game-board {
+  width: 50rem;
+  height: 40rem;
+  background-color: transparent;
+  visibility: hidden;
+  border-radius: 2rem;
+  overflow: hidden;
+  position: relative;
 }
 .game-board__grid {
   display: grid;
@@ -349,6 +363,7 @@
   grid-template-rows: repeat(3, 1fr);
   gap: 2rem;
   background-color: transparent;
+  border-radius: 2rem;
 }
 .game-board__grid__child {
   background-color: #F9C831;
@@ -356,6 +371,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  border-radius: 2rem;
 }
 .game-board__grid__child-1, .game-board__grid__child-3, .game-board__grid__child-5, .game-board__grid__child-7, .game-board__grid__child-9 {
   background-color: #FF4D4D;
@@ -375,6 +391,60 @@
   padding: 0 2rem;
   border-radius: 2rem;
   transform: skew(10deg, -10deg);
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  padding: 2rem;
+  font-size: 2rem;
+  width: 100%;
+  z-index: -1;
+  visibility: hidden;
+}
+.score__box {
+  padding: 2rem 6rem;
+  background-color: #FCE4C7;
+  border-radius: 2rem;
+  color: #FF4D4D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  font-weight: 900;
+}
+
+.game_state_toggle {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 4rem;
+  padding: 1rem 4rem;
+  width: 100%;
+  visibility: hidden;
+}
+.game_state_toggle__btn {
+  padding: 3rem;
+  text-transform: uppercase;
+  background-color: #FCE4C7;
+  border: none;
+  gap: 2rem;
+  border-radius: 1.6rem;
+  color: #FF4D4D;
+  font-weight: 900;
+  cursor: pointer;
+  transition-property: color, background-color;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+}
+.game_state_toggle__btn:hover {
+  background-color: #e0a904;
+  color: #FCE4C7;
 }
 
 *,

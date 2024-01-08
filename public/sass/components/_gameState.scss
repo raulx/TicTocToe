@@ -1,0 +1,29 @@
+.game_state_toggle{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    gap: 4rem;
+    padding: 1rem 4rem;
+    width: 100%;
+    visibility: hidden;
+
+    &__btn{
+        padding: 3rem;
+        text-transform: uppercase;
+        background-color: $color-primary-2;
+        border: none;
+        gap: 2rem;
+        border-radius: 1.6rem;
+        color: $color-secondary;
+        font-weight: 900;
+        cursor: pointer;
+        transition-property: color,background-color;
+        transition-duration: .2s;
+        transition-timing-function: linear;
+        &:hover{
+            background-color: $color-tertiary-hover;
+            color:$color-primary-2;
+        }
+    }
+
+}

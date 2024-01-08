@@ -1,12 +1,26 @@
-.game-board{
-    width: 60rem;
-    height: 50rem;
-    position: absolute;
+.game-container{
+    position: relative;
+    max-width: 110rem;
+    height: 100vh;
+    margin: 0 auto;
     background-color:transparent;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
     visibility: hidden;
+}
+
+.game-board{
+    width: 50rem;
+    height: 40rem;
+    background-color:transparent;
+    visibility: hidden;
+    border-radius: 2rem;
+    overflow: hidden;
+    position: relative;
+
 
     &__grid{
         display: grid;
@@ -16,6 +30,7 @@
         grid-template-rows: repeat(3,1fr);
         gap: 2rem;
         background-color: transparent;
+        border-radius: 2rem;
         
 
         &__child{
@@ -24,6 +39,7 @@
             justify-content: center;
             align-items: center;
             cursor: pointer;
+            border-radius: 2rem;
             &-1,
             &-3,
             &-5,

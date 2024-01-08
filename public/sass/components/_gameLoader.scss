@@ -10,11 +10,12 @@
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: repeat(1,1fr);
     gap: 3rem;
+    z-index: 0;
+    // overflow: hidden;
 
 
     &__box{
-        height: 100%;
-        width: 100%;
+      
         border-radius: 2rem;
         background-color: $color-secondary;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;

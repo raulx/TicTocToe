@@ -7,11 +7,16 @@
       href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Lato:wght@300;400;700;900&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&family=Roboto:wght@400;700;900&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/784d230210.js"
+      crossorigin="anonymous"
+    ></script>
+
     <link rel="stylesheet" href="index.css" />
     <title>TicTacToe</title>
   </head>
   <body>
-    <div class="logo">
+    <div id="logo" class="logo">
       <div class="cross-static_red cross-static_red__logo"></div>
       <div class="circle-static_red circle-static_red__logo"></div>
     </div>
@@ -41,7 +46,7 @@
           id="cross-box"
           class="game__loader__box--side-choice game__loader__box--side-choice-1 flex-center margin-bottom-small padding-small"
         >
-          <div id="dynamic-cross" class="cross-dynamic extra-large">
+          <div id="dynamic-cross" class="cross-dynamic">
             <span></span>
           </div>
         </div>
@@ -49,10 +54,7 @@
           id="circle-box"
           class="game__loader__box--side-choice game__loader__box--side-choice-2 flex-center padding-small"
         >
-          <div
-            id="dynamic-circle"
-            class="circle-dynamic circle_select extra-large"
-          >
+          <div id="dynamic-circle" class="circle-dynamic circle_select">
             <span></span>
           </div>
         </div>
@@ -62,24 +64,51 @@
     <!-- game board -->
     <!-- This game board will be hidden when game is loaded for the first time -->
     <!-- This game board appears when user starts the game.-->
-    <div id="game-board" class="game-board">
-      <div class="game-board__grid">
-        <div class="game-board__grid__child game-board__grid__child-0"></div>
-        <div class="game-board__grid__child game-board__grid__child-1"></div>
-        <div class="game-board__grid__child game-board__grid__child-2"></div>
-        <div class="game-board__grid__child game-board__grid__child-3"></div>
-        <div class="game-board__grid__child game-board__grid__child-4"></div>
-        <div class="game-board__grid__child game-board__grid__child-5"></div>
-        <div class="game-board__grid__child game-board__grid__child-6"></div>
-        <div class="game-board__grid__child game-board__grid__child-7"></div>
-        <div class="game-board__grid__child game-board__grid__child-8"></div>
+    <div class="game-container">
+      <div id="game-toggle" class="game_state_toggle">
+        <button
+          id="restart"
+          class="game_state_toggle__btn game_state_toggle__btn__restart"
+        >
+          restart Game
+        </button>
+        <button
+          id="refresh"
+          class="game_state_toggle__btn game_state_toggle__btn__refresh"
+        >
+          <i
+            class="fa-solid fa-rotate-right game_state_toggle_refresh_icon"
+          ></i>
+        </button>
       </div>
-      <button id="restart">restart</button>
-    </div>
-    <div class="score">
-      <div class="score score__win"></div>
-      <div class="score score__draw"></div>
-      <div class="score score__lost"></div>
+
+      <div id="game-board" class="game-board">
+        <div class="game-board__grid">
+          <div class="game-board__grid__child game-board__grid__child-0"></div>
+          <div class="game-board__grid__child game-board__grid__child-1"></div>
+          <div class="game-board__grid__child game-board__grid__child-2"></div>
+          <div class="game-board__grid__child game-board__grid__child-3"></div>
+          <div class="game-board__grid__child game-board__grid__child-4"></div>
+          <div class="game-board__grid__child game-board__grid__child-5"></div>
+          <div class="game-board__grid__child game-board__grid__child-6"></div>
+          <div class="game-board__grid__child game-board__grid__child-7"></div>
+          <div class="game-board__grid__child game-board__grid__child-8"></div>
+        </div>
+      </div>
+      <div id="score" class="score">
+        <div class="score__box score__box__win">
+          <div id="player_score_box_text">X(You)</div>
+          <div id="player_score_box_score">0</div>
+        </div>
+        <div class="score__box score__box__lost">
+          <div id="cpu_score_box_text">O(Cpu)</div>
+          <div id="cpu_score_box_score">0</div>
+        </div>
+        <div class="score__box score__box__draw">
+          <div>Draw</div>
+          <div id="draw">0</div>
+        </div>
+      </div>
     </div>
     <script src="index.js"></script>
   </body>

@@ -4,8 +4,8 @@
 }
 
 .circle-static{
-    height:22rem;
-    width:22rem;
+    height:14rem;
+    width:14rem;
     background-color: $color-tertiary;
     border-radius:50%;
     position: relative;
@@ -22,8 +22,8 @@
     }
   }
   .circle-static_red{
-    height:22rem;
-    width:22rem;
+    height:14rem;
+    width:14rem;
     background-color: $color-secondary;
     border-radius:50%;
     position: relative;
@@ -44,8 +44,8 @@
     }
   }
   .circle-dynamic{
-    height:22rem;
-    width:22rem;
+    height:14rem;
+    width:14rem;
     background-color: var(--dynamic-circle-background-color);
     border-radius:50%;
     position: relative;
@@ -81,6 +81,6 @@
       height: 30%;
       width: 30%;
       border-radius: 50%;
-      background-color:$color-main;
+      background-color:transparent;
     }
   }

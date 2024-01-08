@@ -3,19 +3,38 @@ const crossBox = document.getElementById('cross-box');
 const circleBox = document.getElementById('circle-box');
 const dynamicCircle = document.getElementById('dynamic-circle');
 const dynamicCross = document.getElementById('dynamic-cross');
+
+
+
+// variable  that toggles the ui.
+
 const gameLoader = document.getElementById('game-loader'); 
 const startBtn = document.getElementById('start-btn');
 const gameBoard = document.getElementById('game-board');
 const restartBtn = document.getElementById('restart');
-
 const gameBoardGrid = document.querySelectorAll('.game-board__grid__child');
+const refreshBtn = document.getElementById('refresh');
+const logo = document.getElementById('logo');
+const gameToggle = document.getElementById('game-toggle');
+const score = document.getElementById('score');
+
+
+// variables to display score.
+const playerScoreText = document.getElementById('player_score_box_text');
+const playerScoreValue = document.getElementById('player_score_box_score');
+const cpuScoreText = document.getElementById('cpu_score_box_text');
+const cpuScoreValue = document.getElementById('cpu_score_box_score');
+const draw = document.getElementById('draw');
+
+
 
 const winnerSequence = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
-
-
 let playerChoice = 'x';
 let totalMoves = 0;
+let playerScore = 0;
+let cpuScore = 0;
 let foundWinner = false;
+let winner;
 
 
 function crossWon(){
@@ -56,7 +75,6 @@ function checkDraw(){
 
 function naughtWon(){
     let winnerFound = false;
-   
     for(let i=0;i<winnerSequence.length;i++){
         let requiredWinningSequence = 0;
 
@@ -156,23 +174,30 @@ function playerMove(){
 function gameStart(){
     gameLoader.style.visibility = 'hidden';
     gameBoard.style.visibility = 'visible';
+    logo.style.visibility = 'visible';
+    gameToggle.style.visibility = 'visible';
+    score.style.visibility = 'visible';
     computerMove()
     playerMove()
 }
 
 function gameReset(){
-    gameLoader.style.visibility = 'visible';
-    gameBoard.style.visibility= 'hidden';
-    const lastChild = document.querySelector('.winner');
-    if(lastChild !== null){
-        gameBoard.removeChild(lastChild)
-    }
-    gameBoardGrid.forEach((box)=>{
-        box.removeEventListener('click',handleClick);
-        box.innerHTML = '';
-    })
-    totalMoves = 0;
-    foundWinner = false;
+    // gameLoader.style.visibility = 'visible';
+    // gameBoard.style.visibility= 'hidden';
+    // logo.style.visibility = 'hidden';
+    // gameToggle.style.visibility = 'hidden';
+    // score.style.visibility = 'hidden';
+    // const lastChild = document.querySelector('.winner');
+    // if(lastChild !== null){
+    //     gameBoard.removeChild(lastChild)
+    // }
+    // gameBoardGrid.forEach((box)=>{
+    //     box.removeEventListener('click',handleClick);
+    //     box.innerHTML = '';
+    // })
+    // totalMoves = 0;
+    // foundWinner = false;
+    window.location.reload()
 }
 
 function userChoice(event){
@@ -203,7 +228,20 @@ function userChoice(event){
     }
 }
 
-
+function refresh(){
+    const lastChild = document.querySelector('.winner');
+    if(lastChild !== null){
+        gameBoard.removeChild(lastChild)
+    }
+    gameBoardGrid.forEach((box)=>{
+        box.removeEventListener('click',handleClick);
+        box.innerHTML = '';
+    })
+    totalMoves = 0;
+    foundWinner = false;
+    gameStart()
+}
+refreshBtn.addEventListener('click',refresh)
 restartBtn.addEventListener('click',gameReset);
 startBtn.addEventListener('click',gameStart)
 crossBox.addEventListener('click',userChoice);
